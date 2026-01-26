@@ -55,22 +55,22 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO SECTION */
 .hero {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* push content to sides */
+  flex-direction: row-reverse; /* text on right, image on left */
   min-height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--text-light);
   padding: 0 40px;
+  gap: 60px;
   position: relative;
   overflow: hidden;
-  gap: 60px;
-  flex-direction: row-reverse;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.2);
 }
+
+
 
 .hero::before {
   content: '';
@@ -86,14 +86,14 @@ body {
 .hero-content {
   flex: 1;
   text-align: left;
-  max-width: 600px;
+  max-width: 950px;
 }
 
 .hero h1 {
   font-size: 3.5rem;
   font-weight: 900;
   margin-bottom: 20px;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.0em;
   color: var(--text-light);
   animation: fadeInUp 1s ease-out;
   position: relative;
@@ -170,14 +170,14 @@ body {
 }
 
 .hero-image .profile-placeholder {
-  width: 220px;
-  height: 220px;
+  width: 220px;  /* desktop width */
+  height: 220px; /* desktop height */
   background: var(--gradient);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
+  font-size: 4rem; /* desktop font size */
   font-weight: 300;
   color: var(--text-light);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
@@ -236,6 +236,7 @@ body {
   line-height: 1.8;
   color: var(--text-muted);
   font-weight: 400;
+  text-align: justify; /* <-- add this */
 }
 
 /* SKILLS SECTION */
@@ -648,7 +649,7 @@ body {
 
   .hero-image .profile-placeholder {
     width: 180px;
-    height: 180px;
+    height: 100px;
     font-size: 3.5rem;
   }
 
@@ -704,3 +705,13 @@ body {
     gap: 10px;
   }
 }
+
+.profile-image {
+  width: 700px;      /* desktop width */
+  height: 700px;     /* desktop height */
+  object-fit: cover; /* keeps the image proportionate and crops if needed */
+  border-radius: 50%; /* makes it circular */
+  display: block;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
