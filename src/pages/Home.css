@@ -86,7 +86,7 @@ body {
 .hero-content {
   flex: 1;
   text-align: left;
-  max-width: 950px;
+  max-width: 1150px;
 }
 
 .hero h1 {
@@ -707,8 +707,8 @@ body {
 }
 
 .profile-image {
-  width: 700px;      /* desktop width */
-  height: 700px;     /* desktop height */
+  width: 500px;      /* desktop width */
+  height: 500px;     /* desktop height */
   object-fit: cover; /* keeps the image proportionate and crops if needed */
   border-radius: 50%; /* makes it circular */
   display: block;
