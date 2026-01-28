@@ -1,54 +1,47 @@
-import { useState } from 'react';
-import './Home.css';
-import profileImage from "../image/peejayasdad.png"; // Import your image
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Home.css";
+import profileImage from "../image/peejayasdad.png";
 
 export default function Home() {
-  const [clickCount, setClickCount] = useState(0);
+  const [, setClickCount] = useState(0); // only setter needed
+  const navigate = useNavigate();
 
   const handleNameClick = () => {
-    const newCount = clickCount + 1;
-    setClickCount(newCount);
+    setClickCount((prev) => {
+      const newCount = prev + 1;
 
-    if (newCount >= 9) {
-      window.location.href = '/admin'; // Redirect to admin login after 9 clicks
-    }
+      if (newCount === 9) {
+        navigate("/admin");
+      }
+
+      return newCount;
+    });
   };
 
   return (
     <div className="home">
-      {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-content">
           <h1>
-            Hi, I’m{' '}
+            Hi, I’m{" "}
             <span
               className="name-highlight"
               onClick={handleNameClick}
               title="Click 9 times to access admin"
+              style={{ cursor: "pointer" }}
             >
               Peejay Marco A. Apale
             </span>
           </h1>
-          <p>
-            BSIT Student · Web Developer · UI/UX Designer
-          </p>
-          <div className="hero-buttons">
-            <a
-              href="https://aquachecklive.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              View Live Project
-            </a>
-          </div>
+
+          <p>BSIT Student · Web Developer · UI/UX Designer</p>
         </div>
 
-        {/* Replace placeholder with actual image */}
         <div className="hero-image">
-          <img 
-            src={profileImage} 
-            alt="Peejay Apale" 
+          <img
+            src={profileImage}
+            alt="Peejay Apale"
             className="profile-image"
           />
         </div>
