@@ -707,11 +707,14 @@ body {
 }
 
 .profile-image {
-  width: 500px;      /* desktop width */
-  height: 500px;     /* desktop height */
-  object-fit: cover; /* keeps the image proportionate and crops if needed */
-  border-radius: 50%; /* makes it circular */
+  width: 100%;
+  max-width: 500px;     /* desktop max size */
+  aspect-ratio: 1 / 1; /* keeps it perfectly square */
+  object-fit: cover;
+  border-radius: 50%;
   display: block;
+  margin: 0 auto;      /* center on mobile */
   box-shadow: 0 25px 50px rgba(0,0,0,0.4);
 }
+
 
